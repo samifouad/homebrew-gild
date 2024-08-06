@@ -1,14 +1,21 @@
-# Documentation: https://docs.brew.sh/Formula-Cookbook
-#                https://rubydoc.brew.sh/Formula
 class Gild < Formula
-  desc "infrastructure as code"
+  desc "Infrastructure as code"
   homepage "https://gild.gg"
-  url "https://github.com/samifouad/gild-cli/releases/download/v0.2.1/gild.tar.gz"
-  sha256 "52ae8f572bf5b3aeb608a7e1b9f0da1c1c8e921e8caca7a6123b7b0e0940c3ff"
+  version "v0.5.17"
   license "Apache2.0"
-  version "0.2.1"
 
-  # depends_on "cmake" => :build
+  if OS.mac?
+    if Hardware::CPU.intel?
+      url "https://github.com/samifouad/gild-cli/releases/download/v0.5.17/gild_cli_v0.5.17_darwin_x64.tar.gz"
+      sha256 "3b55f8d63575293e6fa324e00bb0ff6b7c1b852962dd164975f4d9d09cfd6507"
+    elsif Hardware::CPU.arm?
+      url "https://github.com/samifouad/gild-cli/releases/download/v0.5.17/gild_cli_v0.5.17_darwin_arm64.tar.gz"
+      sha256 "20ba3d4235e36671441151b012d833934a0c23731de85fda6d80ea40bb60f56a"
+    end
+  elsif OS.linux?
+    url "https://github.com/samifouad/gild-cli/releases/download/v0.5.17/gild_cli_v0.5.17_linux_x64.tar.gz"
+    sha256 "f80c46b09c7bad3dbc817138752d2f9cf55d0697cdcd5efc93ba3136c9dbcff1"
+  end
 
   def install
     bin.install "gild"
