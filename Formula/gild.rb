@@ -1,20 +1,20 @@
 class Gild < Formula
   desc "Infrastructure as code"
   homepage "https://gild.gg"
-  version "v0.5.32"
+  version "v0.7.0"
   license "Apache-2.0"
 
   if OS.mac?
     if Hardware::CPU.intel?
-      url "https://github.com/samifouad/gild-cli/releases/download/v0.5.32/gild_cli_v0.5.32_darwin_x64.tar.gz"
-      sha256 "830f9ad5278d0f5bcf22628cf7a77d58f22244a3d5a7c3ecb58b38d0f26e8b07"
+      url "https://github.com/samifouad/gild-cli/releases/download/v0.7.0/gild_cli_v0.7.0_darwin_x64.tar.gz"
+      sha256 "7e7a7aec5f8c54448f425ae5941414e05318498b2708e2d3c8b5fb551de238cf"
     elsif Hardware::CPU.arm?
-      url "https://github.com/samifouad/gild-cli/releases/download/v0.5.32/gild_cli_v0.5.32_darwin_arm64.tar.gz"
-      sha256 "b82bbf7fc22c690d08d8d8a298c17aee0abff31c2b94be2342802ab8f2cd224f"
+      url "https://github.com/samifouad/gild-cli/releases/download/v0.7.0/gild_cli_v0.7.0_darwin_arm64.tar.gz"
+      sha256 "02b844bec90e11a3ff4cfa208abf9b2d0165d1c8e03bd76e8cb9fa050764b5b2"
     end
   elsif OS.linux?
-    url "https://github.com/samifouad/gild-cli/releases/download/v0.5.32/gild_cli_v0.5.32_linux_x64.tar.gz"
-    sha256 "6a2f5ba932e302ea6137a8af70baa89a8033db14c6bdd4adfd7a5423f0189038"
+    url "https://github.com/samifouad/gild-cli/releases/download/v0.7.0/gild_cli_v0.7.0_linux_x64.tar.gz"
+    sha256 "8f6c8f196c22f73623a65f60897204a18d6edaf921aed988e4b363d5b4df83ca"
   end
 
   def install
